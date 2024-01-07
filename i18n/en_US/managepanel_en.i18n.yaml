@@ -1,0 +1,18 @@
+date: Date
+time: Time
+from: From
+to: To
+fliterBy: Filter By
+flightNumber: Flight Number
+aircraft: Aircraft
+economyPrice: Economy price
+buisnessPrice: Buisness price
+firstClassPrice: First class price
+sortBy: Sort by
+outbound: Outbound
+apply: Apply
+import: Import
+cancelFlight: Cancel Flight
+editFlight: Edit Flight
+importChanges: Import Changes
+

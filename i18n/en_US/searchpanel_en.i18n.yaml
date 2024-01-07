@@ -1,0 +1,19 @@
+searchParametrs: Search Parameters
+oneWay: One Way
+ofd: Outbound Flight Details
+rfd: Return Flight Details
+cbf: Confirm Booking for
+bookFlight: Book Flight
+passengers: Passengers
+display: Display three days before and after
+from: From
+to: To
+cabinType: Cabin Type
+cabinPrice: Cabin Price
+numberOfStops: Number of Stops
+returnRoute: Return
+fightNumber: Flight Number
+outbound: Outbound
+time: Time
+date: Date
+routeType: Route Type

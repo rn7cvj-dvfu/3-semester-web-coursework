@@ -1,0 +1,19 @@
+searchParametrs: Параметры поиска
+oneWay: В одну сторону
+ofd: Подробности вылета
+rfd: Подробности прилёта
+cbf: Подтвердить бронирование на
+bookFlight: Забронировать рейс
+passengers: Пассажиров
+display: Отобразить за три дня до и после
+from: Откуда
+to: Куда
+cabinType: Тип салона
+cabinPrice: Цена салона
+numberOfStops: Количество остановок
+returnRoute: Возврат
+fightNumber: Номер рейса
+outbound: Вылет
+time: Время
+date: Дата
+routeType: Тип маршрута

@@ -1,0 +1,13 @@
+firstname: Имя
+lastname: Фамилия
+birthdate: Дата рождения
+passportNumber: Номер паспорта
+passportCountry: Страна по паспорту
+phone: Телефон
+addPassenger: Добавить пассажира
+passengersList: Список пассажиров
+removePassenger: Удалить пассажира
+backToSearch: Вернуться к поиску рейсов
+confirmBooking: Подтвердить бронирование
+passengersDetails: Данные пассажиров
+displayDays: Показать три дня до и после
