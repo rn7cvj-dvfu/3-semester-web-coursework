@@ -9,7 +9,6 @@ import '../utils.dart';
 Future<void> main() async {
   setUpSystemUIOverlay();
   LocaleSettings.useDeviceLocale();
-  // LocaleSettings.setLocale(AppLocale.ru);
   initializeDateFormatting();
 
   await DIManager.init();
