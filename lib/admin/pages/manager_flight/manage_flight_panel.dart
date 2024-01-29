@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:mobx/mobx.dart';
 import 'package:web_susch/admin/pages/manager_flight/widgets/actions_row.dart';
 import 'package:web_susch/admin/pages/manager_flight/widgets/filters.dart';
 import 'package:web_susch/constants.dart';
+import 'package:web_susch/shared/controllers/addFlights/controller.dart';
+import 'package:web_susch/shared/controllers/di/manager.dart';
+import 'package:web_susch/shared/controllers/flights/controller.dart';
+import 'package:web_susch/shared/controllers/users/controller.dart';
 import 'package:web_susch/shared/models/flight.dart';
 import 'package:web_susch/admin/pages/admin_panel/widgets/actions_row.dart';
 import 'package:web_susch/admin/pages/admin_panel/widgets/text_input.dart';
@@ -12,41 +18,7 @@ import 'package:web_susch/admin/pages/manager_flight/widgets/flights_list.dart';
 class ManageFlightPanel extends StatelessWidget {
   ManageFlightPanel({super.key});
 
-  final List<Flight> mockFlights = [
-    Flight(
-      date: DateTime.now(),
-      from: "VLD",
-      to: "MSC",
-      flightNumber: 1479,
-      aircraft: 320,
-      economyPrice: 250,
-      buisnessPrice: 350,
-      firstClassPrice: 550,
-      status: FlightStatus.allowed,
-    ),
-    Flight(
-      date: DateTime.now(),
-      from: "VLD",
-      to: "MSC",
-      flightNumber: 1479,
-      aircraft: 320,
-      economyPrice: 250,
-      buisnessPrice: 350,
-      firstClassPrice: 550,
-      status: FlightStatus.canceled,
-    ),
-    Flight(
-      date: DateTime.now(),
-      from: "VLD",
-      to: "MSC",
-      flightNumber: 1479,
-      aircraft: 320,
-      economyPrice: 250,
-      buisnessPrice: 350,
-      firstClassPrice: 550,
-      status: FlightStatus.canceled,
-    )
-  ];
+  final AddFlightController addFlightsController = DIManager.get<AddFlightController>();
 
   @override
   Widget build(BuildContext context) {
@@ -75,11 +47,21 @@ class ManageFlightPanel extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: appPaddingLarge),
-                child: FlightsList(
-                  flights: mockFlights.asObservable(),
-                ),
+                padding: const EdgeInsets.all(appPaddingLarge),
+                child: Observer(builder: (_) {
+                  if (addFlightsController.isLoading) {
+                    return Center(
+                      child: LoadingAnimationWidget.prograssiveDots(
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 80,
+                      ),
+                    );
+                  }
+
+                  return FlightsList(
+                    flights: addFlightsController.flights.asObservable(),
+                  );
+                }),
               ),
             ),
             const Padding(
