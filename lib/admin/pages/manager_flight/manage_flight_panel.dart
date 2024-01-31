@@ -64,7 +64,7 @@ class ManageFlightPanel extends StatelessWidget {
             //     }),
             //   ),
             // ),
-            const SizedBox(height: 250),
+            Spacer(),
             const Padding(
               padding: EdgeInsets.all(appPaddingMedium),
               child: ActionRow(),

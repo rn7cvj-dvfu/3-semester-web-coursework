@@ -45,6 +45,10 @@ class ActionRow extends StatelessWidget {
         //   width: formFieldWidth,
         //   onSelect: (newDate) => usersController.newUserBirthday = newDate,
         // ),
+        const FileDownloadButton(
+          begin: '2017-01-01',
+          end: '2024-12-31',
+        ),
         FilePickerButton(
           onFilePicked: (String path) => context.pop(),
         ),
@@ -53,20 +57,20 @@ class ActionRow extends StatelessWidget {
   }
 
   void openEditFlightDialog(BuildContext context) => showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text(t.managepanel.editFlight),
-          content: EditFlightDialog(),
-          actions: [
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(t.common.save),
-            ),
-            ElevatedButton(
-              onPressed: context.pop,
-              child: Text(t.common.cancel),
-            ),
-          ],
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(t.managepanel.editFlight),
+      content: EditFlightDialog(),
+      actions: [
+        ElevatedButton(
+          onPressed: () {},
+          child: Text(t.common.save),
         ),
-      );
+        ElevatedButton(
+          onPressed: context.pop,
+          child: Text(t.common.cancel),
+        ),
+      ],
+    ),
+  );
 }

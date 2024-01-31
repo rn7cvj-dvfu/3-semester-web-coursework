@@ -15,4 +15,5 @@ import: Import
 cancelFlight: Cancel Flight
 editFlight: Edit Flight
 importChanges: Import Changes
+exportChanges: Export Changes
 
