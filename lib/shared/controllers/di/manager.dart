@@ -77,5 +77,10 @@ class DIManager {
     GetIt.I.registerSingleton<UsersController>(usersController);
   }
 
+  static Future<void> reinit() async {
+    await DIManager.get<AirportController>().init();
+    await DIManager.get<OfficeController>().init();
+  }
+
   static T get<T extends Object>() => GetIt.I<T>();
 }

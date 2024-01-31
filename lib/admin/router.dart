@@ -8,6 +8,8 @@ import 'package:web_susch/admin/pages/login/login.dart';
 import 'package:web_susch/admin/pages/manager_flight/manage_flight_panel.dart';
 import 'package:web_susch/admin/pages/search_panel/booking_conformation_page.dart';
 import 'package:web_susch/admin/pages/search_panel/search_panel.dart';
+import 'package:web_susch/shared/controllers/di/manager.dart';
+import 'package:web_susch/shared/controllers/token/controller.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigationKey = GlobalKey<NavigatorState>();
@@ -33,19 +35,47 @@ GoRouter router = GoRouter(
           GoRoute(
             path: "/adminPanel",
             pageBuilder: (context, state) => MaterialPage(child: AdminPanel()),
+            redirect: (context, state) {
+              if (DIManager.get<TokenContoller>().token?.isEmpty ?? true) {
+                return "/login";
+              }
+
+              return null;
+            },
           ),
           GoRoute(
             path: "/manageFlightPanel",
             pageBuilder: (context, state) =>
                 MaterialPage(child: ManageFlightPanel()),
+            redirect: (context, state) {
+              if (DIManager.get<TokenContoller>().token?.isEmpty ?? true) {
+                return "/login";
+              }
+
+              return null;
+            },
           ),
           GoRoute(
             path: "/searchPanel",
             builder: (context, state) => SearchPanel(),
+            redirect: (context, state) {
+              if (DIManager.get<TokenContoller>().token?.isEmpty ?? true) {
+                return "/login";
+              }
+
+              return null;
+            },
           ),
           GoRoute(
             path: "/bookingsPanel",
             builder: (context, state) => BookingConformationPage(),
+            redirect: (context, state) {
+              if (DIManager.get<TokenContoller>().token?.isEmpty ?? true) {
+                return "/login";
+              }
+
+              return null;
+            },
           ),
         ]),
   ],

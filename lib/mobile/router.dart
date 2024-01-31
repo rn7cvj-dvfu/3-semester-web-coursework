@@ -15,7 +15,7 @@ final _shellNavigationKey = GlobalKey<NavigatorState>();
 GoRouter router = GoRouter(
   routerNeglect: true,
   navigatorKey: rootNavigatorKey,
-  initialLocation: "/home",
+  initialLocation: "/login",
   routes: [
     GoRoute(
       path: "/login",

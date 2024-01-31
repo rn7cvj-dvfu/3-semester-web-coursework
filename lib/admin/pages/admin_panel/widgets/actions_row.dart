@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:web_susch/admin/navigation/navigator.dart';
 import 'package:web_susch/admin/pages/admin_panel/widgets/edit_role_dialog.dart';
 import 'package:web_susch/gen/i18n/strings.g.dart';
 import 'package:web_susch/admin/pages/admin_panel/widgets/add_user_dialog.dart';
 import 'package:web_susch/admin/pages/admin_panel/widgets/office_filter.dart';
 import 'package:web_susch/shared/controllers/di/manager.dart';
+import 'package:web_susch/shared/controllers/token/controller.dart';
 import 'package:web_susch/shared/controllers/users/controller.dart';
 
 class ActionsRow extends StatelessWidget {
@@ -30,7 +32,10 @@ class ActionsRow extends StatelessWidget {
           ),
         ),
         TextButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            DIManager.get<TokenContoller>().writeNewToken(null);
+            AppNavigator.openLoginPage();
+          },
           label: Text(t.adminpanel.exit),
           icon: const Icon(Icons.exit_to_app),
           style: ButtonStyle(

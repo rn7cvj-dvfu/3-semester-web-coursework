@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:web_susch/admin/navigation/navigator.dart';
 import 'package:web_susch/shared/controllers/di/manager.dart';
 import 'package:web_susch/shared/controllers/login/controller.dart';
 import 'package:web_susch/shared/controllers/login/converter.dart';
@@ -13,6 +14,10 @@ class LoginLandscape extends StatelessWidget {
 
   final LoginController controller = LoginController(
     loginConverter: DIManager.get<LoginConverter>(),
+    onSucessfullLogin: () async {
+      await DIManager.reinit();
+      AppNavigator.openAdminPanel();
+    },
   );
 
   final TextEditingController _userNameController = TextEditingController();

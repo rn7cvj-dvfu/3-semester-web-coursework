@@ -8,6 +8,11 @@ class AppNavigator {
   //       () => rootNavigatorKey.currentContext!.go("/admin_main/add_user"));
   // }
 
+  static void openLoginPage() {
+    Router.neglect(rootNavigatorKey.currentContext!,
+        () => rootNavigatorKey.currentContext!.go("/login"));
+  }
+
   static void openAdminPanel() {
     Router.neglect(rootNavigatorKey.currentContext!,
         () => rootNavigatorKey.currentContext!.go("/adminPanel"));
