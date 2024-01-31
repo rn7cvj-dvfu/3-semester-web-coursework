@@ -13,7 +13,7 @@ abstract class FlightsControllerBase with Store {
 
   String fromAirportCode = "";
   String toAirportCode = "";
-  DateTime date = DateTime(2017, 12, 25);
+  DateTime date = DateTime.now();
 
   @observable
   bool isLoading = false;

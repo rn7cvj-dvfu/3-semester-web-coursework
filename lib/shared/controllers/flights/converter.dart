@@ -1,4 +1,6 @@
 import 'package:chopper/chopper.dart';
+import 'package:flutter/material.dart';
+import 'package:web_susch/logger.dart';
 import 'package:web_susch/shared/controllers/flights/service.dart';
 import 'package:web_susch/shared/models/flight.dart';
 
@@ -46,19 +48,28 @@ class FlightsConverter {
   List<Flight> _parseFlights(Response response) {
     List<dynamic> flights = response.body['to'] as List;
 
-    return flights
-        .map((flight) => Flight(
-              date: DateTime.parse(flight["Date"]),
-              from: flight["From"],
-              to: flight["To"],
-              flightNumber: int.parse(flight["FlightNumbers"][0]),
-              aircraft: int.parse(flight["FlightNumbers"][0]),
-              economyPrice: flight["EconomyPrice"].toInt(),
-              buisnessPrice: flight["BusinessPrice"].toInt(),
-              firstClassPrice: flight["FirstClassPrice"].toInt(),
-              status: FlightStatus.allowed,
-            ))
-        .toList();
+    return flights.map((flight) {
+      String h = (flight['Time'] as String).substring(0, 1);
+      int ih = int.tryParse(h) ?? 0;
+
+      String m = (flight['Time'] as String).substring(4, 5);
+      int im = int.tryParse(m) ?? 0;
+
+      String s = (flight['Time'] as String).substring(7, 8);
+      int ise = int.tryParse(s) ?? 0;
+      return Flight(
+        date: DateTime.parse(flight["Date"])
+            .add(Duration(hours: ih, minutes: im, seconds: ise)),
+        from: flight["From"],
+        to: flight["To"],
+        flightNumber: int.parse(flight["FlightNumbers"][0]),
+        aircraft: int.parse(flight["FlightNumbers"][0]),
+        economyPrice: flight["EconomyPrice"].toInt(),
+        buisnessPrice: flight["BusinessPrice"].toInt(),
+        firstClassPrice: flight["FirstClassPrice"].toInt(),
+        status: FlightStatus.allowed,
+      );
+    }).toList();
   }
 }
 
