@@ -1,0 +1,14 @@
+name: Name
+lastName: Last Name
+age: Age
+email: Email
+office: Office
+addUser: Add User
+changeRole: Change Role
+disableEnableLoggin: Disable/Enable loggin
+exit: Exit
+administrator: Administrator
+user: User
+birthday: Birthday
+selectOffice: Select Office
+noUsersFound: No users found

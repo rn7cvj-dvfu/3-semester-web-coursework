@@ -1,0 +1,15 @@
+firstname: First Name
+lastname: Last Name
+birthdate: Birthdate
+passportNumber: Passport Number
+passportCountry: Passport Country
+phone: Phone
+addPassenger: Add Passenger
+passengersList: Passengers List
+removePassenger: Remove Passenger
+backToSearch: Back to Search For Flights
+confirmBooking: Confirm Booking
+passengersDetails: Passengers Details
+displayDays: Display Three Days Before and After
+
+

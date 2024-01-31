@@ -1,0 +1,18 @@
+date: Дата
+time: Время
+from: От
+to: До
+fliterBy: Отсортировать по
+flightNumber: Номер рейса
+aircraft: Модель
+economyPrice: Цена эконом-класса
+buisnessPrice: Цена бизнес-класса
+firstClassPrice: Цена первого класса
+sortBy: Сортировать по
+outbound: Исходящий рейс
+apply: Применить
+import: Импортировать
+cancelFlight: Отменить рейс
+editFlight: Редактировать рейс
+importChanges: Импортировать изменения
+exportChanges: Экспортировать изменения
