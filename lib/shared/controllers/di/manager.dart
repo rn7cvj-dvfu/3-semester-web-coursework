@@ -1,4 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:web_susch/shared/controllers/addFlights/controller.dart';
+import 'package:web_susch/shared/controllers/addFlights/converter.dart';
+import 'package:web_susch/shared/controllers/addFlights/service.dart';
 import 'package:web_susch/shared/controllers/airports/controller.dart';
 import 'package:web_susch/shared/controllers/airports/converter.dart';
 import 'package:web_susch/shared/controllers/airports/service.dart';
@@ -49,6 +52,14 @@ class DIManager {
       flightsConverter: flightsConverter,
     );
 
+    AddFlightConverter addFlightConverter = AddFlightConverter(
+      addFlightService: chopper.getService<AddFlightService>(),
+    );
+
+    AddFlightController addFlightController = AddFlightController(
+      addFlightConverter: addFlightConverter,
+    );
+
     UsersConverter usersConverter = UsersConverter(
       usersService: chopper.getService<UsersService>(),
     );
@@ -69,11 +80,13 @@ class DIManager {
     await officeController.init();
 
     usersController.getUsers();
+    addFlightController.addFlightGet();
 
     GetIt.I.registerSingleton<LoginConverter>(loginConverter);
     GetIt.I.registerSingleton<AirportController>(airportController);
     GetIt.I.registerSingleton<OfficeController>(officeController);
     GetIt.I.registerSingleton<FlightsController>(flightsController);
+    GetIt.I.registerSingleton<AddFlightController>(addFlightController);
     GetIt.I.registerSingleton<UsersController>(usersController);
   }
 

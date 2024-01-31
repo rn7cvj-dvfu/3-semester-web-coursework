@@ -15,3 +15,4 @@ import: Импортировать
 cancelFlight: Отменить рейс
 editFlight: Редактировать рейс
 importChanges: Импортировать изменения
+exportChanges: Экспортировать изменения

@@ -62,7 +62,6 @@ class LoginLandscape extends StatelessWidget {
                       child: child,
                     );
                   }),
-                  ElevatedButton(onPressed: () {}, child: Text(t.login.exit)),
                 ],
               ),
             )

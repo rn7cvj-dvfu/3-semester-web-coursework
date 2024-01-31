@@ -19,16 +19,6 @@ class UserActionRow extends StatelessWidget {
                 Theme.of(context).textTheme.titleMedium),
           ),
         ),
-        const SizedBox(width: 18),
-        TextButton.icon(
-          onPressed: () {},
-          label: Text(t.adminpanel.disableEnableLoggin),
-          icon: const Icon(Icons.disabled_visible),
-          style: ButtonStyle(
-            textStyle: MaterialStatePropertyAll(
-                Theme.of(context).textTheme.titleMedium),
-          ),
-        )
       ],
     );
   }

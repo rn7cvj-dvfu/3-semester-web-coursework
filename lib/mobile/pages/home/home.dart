@@ -37,36 +37,36 @@ class Home extends StatelessWidget {
                         label: t.home.searchFligths,
                       ),
                       const SizedBox(height: appPaddingMedium),
-                      IconTextButton(
-                        buttonWidth: buttonWidth,
-                        icon: Icon(
-                          Icons.alarm_add,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer,
-                        ),
-                        onTap: () {},
-                        label: t.home.reserveSeat,
-                      ),
-                      const SizedBox(height: appPaddingMedium),
-                      IconTextButton(
-                        buttonWidth: buttonWidth,
-                        icon: Icon(
-                          Icons.extension_rounded,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer,
-                        ),
-                        onTap: AppNavigator.openAmenitieshPage,
-                        label: t.home.amenities,
-                      ),
-                      SizedBox(
-                        width: buttonWidth,
-                        height: appPaddingLarge,
-                        child: Divider(
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer,
-                          thickness: 2,
-                        ),
-                      ),
+                      // IconTextButton(
+                      //   buttonWidth: buttonWidth,
+                      //   icon: Icon(
+                      //     Icons.alarm_add,
+                      //     color:
+                      //         Theme.of(context).colorScheme.onPrimaryContainer,
+                      //   ),
+                      //   onTap: () {},
+                      //   label: t.home.reserveSeat,
+                      // ),
+                      // const SizedBox(height: appPaddingMedium),
+                      // IconTextButton(
+                      //   buttonWidth: buttonWidth,
+                      //   icon: Icon(
+                      //     Icons.extension_rounded,
+                      //     color:
+                      //         Theme.of(context).colorScheme.onPrimaryContainer,
+                      //   ),
+                      //   onTap: AppNavigator.openAmenitieshPage,
+                      //   label: t.home.amenities,
+                      // ),
+                      // SizedBox(
+                      //   width: buttonWidth,
+                      //   height: appPaddingLarge,
+                      //   child: Divider(
+                      //     color:
+                      //         Theme.of(context).colorScheme.onPrimaryContainer,
+                      //     thickness: 2,
+                      //   ),
+                      // ),
                       IconTextButton(
                         buttonWidth: buttonWidth,
                         icon: Icon(

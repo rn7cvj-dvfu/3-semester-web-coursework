@@ -1,4 +1,5 @@
 import 'package:chopper/chopper.dart';
+import 'package:web_susch/shared/controllers/addFlights/service.dart';
 import 'package:web_susch/shared/controllers/airports/service.dart';
 import 'package:web_susch/shared/controllers/flights/service.dart';
 import 'package:web_susch/shared/controllers/login/service.dart';
@@ -20,6 +21,7 @@ ChopperClient chopper = ChopperClient(
     OfficeService.create(),
     FlightService.create(),
     UsersService.create(),
+    AddFlightService.create(),
   ],
   authenticator: TokenAuthenticator(),
   converter: const JsonConverter(),
