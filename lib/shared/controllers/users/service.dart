@@ -20,5 +20,10 @@ abstract class UsersService extends ChopperService {
     @Field('birthdate') String birthday,
   );
 
+  @Put(path: 'user/update')
+  Future<Response> updateUser(
+    @Field('status') String status,
+  );
+
   static UsersService create([ChopperClient? client]) => _$UsersService(client);
 }

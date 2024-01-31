@@ -27,43 +27,44 @@ class ManageFlightPanel extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: appPaddingLarge,
-                right: appPaddingLarge,
-                left: appPaddingLarge,
-              ),
-              child: Filter(
-                formFieldWidth: 200,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(appPaddingLarge),
-              child: Divider(
-                thickness: 2,
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(appPaddingLarge),
-                child: Observer(builder: (_) {
-                  if (addFlightsController.isLoading) {
-                    return Center(
-                      child: LoadingAnimationWidget.prograssiveDots(
-                        color: Theme.of(context).colorScheme.primary,
-                        size: 80,
-                      ),
-                    );
-                  }
+            // const SizedBox(height: 10),
+            // Padding(
+            //   padding: const EdgeInsets.only(
+            //     top: appPaddingLarge,
+            //     right: appPaddingLarge,
+            //     left: appPaddingLarge,
+            //   ),
+            //   child: Filter(
+            //     formFieldWidth: 200,
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(appPaddingLarge),
+            //   child: Divider(
+            //     thickness: 2,
+            //     color: Theme.of(context).colorScheme.secondary,
+            //   ),
+            // ),
+            // Expanded(
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(appPaddingLarge),
+            //     child: Observer(builder: (_) {
+            //       if (addFlightsController.isLoading) {
+            //         return Center(
+            //           child: LoadingAnimationWidget.prograssiveDots(
+            //             color: Theme.of(context).colorScheme.primary,
+            //             size: 80,
+            //           ),
+            //         );
+            //       }
 
-                  return FlightsList(
-                    flights: addFlightsController.flights.asObservable(),
-                  );
-                }),
-              ),
-            ),
+            //       return FlightsList(
+            //         flights: addFlightsController.flights.asObservable(),
+            //       );
+            //     }),
+            //   ),
+            // ),
+            const SizedBox(height: 250),
             const Padding(
               padding: EdgeInsets.all(appPaddingMedium),
               child: ActionRow(),

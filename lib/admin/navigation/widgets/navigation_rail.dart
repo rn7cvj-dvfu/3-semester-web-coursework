@@ -37,20 +37,20 @@ class CustomNavigationRail extends StatelessWidget {
                     onPressed: AppNavigator.opneManageFlightPanel,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 24.0),
-                  child: IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: AppNavigator.openSearchPanel,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 24.0),
-                  child: IconButton(
-                    icon: Icon(Icons.book),
-                    onPressed: AppNavigator.openBookingsPanel,
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(top: 24.0),
+                //   child: IconButton(
+                //     icon: Icon(Icons.search),
+                //     onPressed: AppNavigator.openSearchPanel,
+                //   ),
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.only(top: 24.0),
+                //   child: IconButton(
+                //     icon: Icon(Icons.book),
+                //     onPressed: AppNavigator.openBookingsPanel,
+                //   ),
+                // ),
               ],
             ),
           ),

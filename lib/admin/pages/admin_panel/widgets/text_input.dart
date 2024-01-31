@@ -95,6 +95,8 @@ class AddPassField extends StatelessWidget {
   }
 }
 
+
+
 class FilePickerButton extends StatelessWidget {
   const FilePickerButton({Key? key, required this.onFilePicked})
       : super(key: key);
@@ -111,7 +113,7 @@ class FilePickerButton extends StatelessWidget {
           onFilePicked(path!);
         }
       },
-      child: Text(t.managepanel.import),
+      child: Text(t.managepanel.importChanges),
     );
   }
 }
