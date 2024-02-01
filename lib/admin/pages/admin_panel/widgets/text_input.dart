@@ -12,6 +12,37 @@ import 'package:file_picker/file_picker.dart';
 import 'package:web_susch/gen/i18n/strings.g.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:file_saver/file_saver.dart';
+
+class FileDownloadButton extends StatelessWidget {
+  const FileDownloadButton({
+    Key? key,
+  }) : super(key: key);
+
+  void _downloadFile() async {
+  try {
+    final response = await http.get(Uri.parse('https://websusch.poslam.ru/api/flight/export?begin=2000-01-01&end=2040-01-01'));
+
+    if (response.statusCode == 200) {
+      const fileName = 'export.xlsx';
+      final bytes = response.bodyBytes;
+      await FileSaver.instance.saveFile(bytes: bytes, name: fileName);
+    } else {
+      print('Failed to download file. Status code: ${response.statusCode}');
+    }
+  } catch (error) {
+    print('Error downloading file: $error');
+  }
+}
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: _downloadFile,
+      child: Text(t.managepanel.exportChanges),
+    );
+  }
+}
 
 class AddTextField extends StatelessWidget {
   const AddTextField({super.key, required this.width, required this.labelText});
@@ -127,43 +158,5 @@ class FilePickerButton extends StatelessWidget {
 }
 
 
-class FileDownloadButton extends StatelessWidget {
-  const FileDownloadButton({
-    Key? key,
-    required this.begin,
-    required this.end,
-  }) : super(key: key);
-
-  final String begin;
-  final String end;
-
-  void _downloadFile() async {
-    try {
-      final response = await http.get(Uri.parse('api/flight/export?begin=$begin&end=$end'));
-
-      if (response.statusCode == 200) {
-        final responseBody = response.body;
-        final tempDir = await getTemporaryDirectory();
-        final tempFile = io.File('${tempDir.path}/data.xlsx');
-        await tempFile.writeAsBytes(responseBody.codeUnits);
-        final downloadsDir = await DownloadsPathProvider.downloadsDirectory;
-        final downloadFile = await tempFile.copy('${downloadsDir!.path}/data.xlsx');
-        await Share.shareXFiles([XFile(downloadFile.path)]);
-      } else {
-        print('Failed to download file. Status code: ${response.statusCode}');
-      }
-    } catch (error) {
-      print('Error downloading file: $error');
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: _downloadFile,
-      child: Text(t.managepanel.exportChanges),
-    );
-  }
-}
 
 

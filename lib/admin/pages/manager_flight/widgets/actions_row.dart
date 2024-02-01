@@ -45,10 +45,7 @@ class ActionRow extends StatelessWidget {
         //   width: formFieldWidth,
         //   onSelect: (newDate) => usersController.newUserBirthday = newDate,
         // ),
-        const FileDownloadButton(
-          begin: '2017-01-01',
-          end: '2024-12-31',
-        ),
+        const FileDownloadButton(),
         FilePickerButton(
           onFilePicked: (String path) => context.pop(),
         ),

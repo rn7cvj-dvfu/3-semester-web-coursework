@@ -51,10 +51,10 @@ class AdminPanelLandscape extends StatelessWidget {
                 }),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(appPaddingLarge),
-              child: UserActionRow(),
-            ),
+            // const Padding(
+            //   padding: EdgeInsets.all(appPaddingLarge),
+            //   child: UserActionRow(),
+            // ),
           ],
         ),
       ),
