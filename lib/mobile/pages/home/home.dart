@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:web_susch/constants.dart';
 import 'package:web_susch/gen/i18n/strings.g.dart';
 import 'package:web_susch/mobile/navigation/navigator.dart';
@@ -44,7 +46,9 @@ class Home extends StatelessWidget {
                           color:
                               Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          showBookingError(context);
+                        },
                         label: t.home.reserveSeat,
                       ),
                       SizedBox(
@@ -73,6 +77,15 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void showBookingError(BuildContext context) {
+    showTopSnackBar(
+      Overlay.of(context),
+      CustomSnackBar.error(
+        message: t.home.bookingUnvalible,
       ),
     );
   }
