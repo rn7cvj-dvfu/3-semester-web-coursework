@@ -49,13 +49,13 @@ class FlightsConverter {
     List<dynamic> flights = response.body['to'] as List;
 
     return flights.map((flight) {
-      String h = (flight['Time'] as String).substring(0, 1);
+      String h = (flight['Time'] as String).substring(0, 2);
       int ih = int.tryParse(h) ?? 0;
 
-      String m = (flight['Time'] as String).substring(4, 5);
+      String m = (flight['Time'] as String).substring(3, 5);
       int im = int.tryParse(m) ?? 0;
 
-      String s = (flight['Time'] as String).substring(7, 8);
+      String s = (flight['Time'] as String).substring(6, 8);
       int ise = int.tryParse(s) ?? 0;
 
       int transerfCount = (flight["ScheduleIds"] as List).length;
