@@ -23,6 +23,8 @@ class ManageFlightPanel extends StatelessWidget {
       buisnessPrice: 350,
       firstClassPrice: 550,
       status: FlightStatus.allowed,
+      transefCount: 0,
+      scheduleIds: [],
     ),
     Flight(
       date: DateTime.now(),
@@ -34,6 +36,8 @@ class ManageFlightPanel extends StatelessWidget {
       buisnessPrice: 350,
       firstClassPrice: 550,
       status: FlightStatus.canceled,
+      transefCount: 0,
+      scheduleIds: [],
     ),
     Flight(
       date: DateTime.now(),
@@ -45,6 +49,8 @@ class ManageFlightPanel extends StatelessWidget {
       buisnessPrice: 350,
       firstClassPrice: 550,
       status: FlightStatus.canceled,
+      transefCount: 0,
+      scheduleIds: [],
     )
   ];
 

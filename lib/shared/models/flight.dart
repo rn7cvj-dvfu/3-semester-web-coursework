@@ -12,19 +12,24 @@ class Flight {
   final int economyPrice;
   final int buisnessPrice;
   final int firstClassPrice;
+  final int transefCount;
+  final List<int> scheduleIds;
 
   final FlightStatus status;
 
-  Flight(
-      {required this.date,
-      required this.from,
-      required this.to,
-      required this.flightNumber,
-      required this.aircraft,
-      required this.economyPrice,
-      required this.buisnessPrice,
-      required this.firstClassPrice,
-      required this.status});
+  Flight({
+    required this.date,
+    required this.from,
+    required this.to,
+    required this.flightNumber,
+    required this.aircraft,
+    required this.economyPrice,
+    required this.buisnessPrice,
+    required this.firstClassPrice,
+    required this.status,
+    required this.transefCount,
+    required this.scheduleIds,
+  });
 
   factory Flight.fromJson(Map<String, dynamic> json) => _$FlightFromJson(json);
 

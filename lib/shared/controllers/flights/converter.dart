@@ -57,6 +57,10 @@ class FlightsConverter {
 
       String s = (flight['Time'] as String).substring(7, 8);
       int ise = int.tryParse(s) ?? 0;
+
+      int transerfCount = (flight["ScheduleIds"] as List).length;
+      List<int> scheduleIds = [];
+
       return Flight(
         date: DateTime.parse(flight["Date"])
             .add(Duration(hours: ih, minutes: im, seconds: ise)),
@@ -68,6 +72,8 @@ class FlightsConverter {
         buisnessPrice: flight["BusinessPrice"].toInt(),
         firstClassPrice: flight["FirstClassPrice"].toInt(),
         status: FlightStatus.allowed,
+        transefCount: transerfCount,
+        scheduleIds: scheduleIds,
       );
     }).toList();
   }

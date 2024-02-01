@@ -112,10 +112,10 @@ class FligthCard extends StatelessWidget {
                   '${t.search.to}: ${getAirportNameFromCode(flight.to)}',
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                // Text(
-                //   '${t.search.to}: ${getAirportNameFromCode()}',
-                //   style: Theme.of(context).textTheme.headlineSmall,
-                // ),
+                Text(
+                  '${t.search.transferCount}: ${flight.transefCount}',
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
                 Row(
                   children: [
                     const Icon(Icons.calendar_month),
